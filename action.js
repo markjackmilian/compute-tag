@@ -113,6 +113,7 @@ function computeNextSemantic(semTag) {
       case Semantic.Patch:
       case Semantic.Premajor:
       case Semantic.Prerelease:
+      case Semantic.PreMinor:
         return `${semTag.options.tagPrefix}${semver.inc(semTag, type, preName)}`
       default:
         core.setFailed(
