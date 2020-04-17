@@ -21,6 +21,7 @@ const Semantic = {
   Patch: 'patch',
   Premajor: 'premajor',
   Prerelease: 'prerelease',
+  PreMinor: 'preminor'
 }
 
 function isNullString(string) {
@@ -71,6 +72,8 @@ function determineContinuousBumpType(semTag) {
       return hasExistingPrerelease ? Semantic.Prerelease : Semantic.Premajor
     case Semantic.Premajor:
       return Semantic.Premajor
+    case Semantic.PreMinor:
+        return Semantic.PreMinor
     default:
       return Semantic.Major
   }
